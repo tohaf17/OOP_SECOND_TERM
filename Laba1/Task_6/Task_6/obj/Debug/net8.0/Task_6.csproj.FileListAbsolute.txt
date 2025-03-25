@@ -12,3 +12,4 @@ C:\Users\ADMIN\Desktop\OOP\Laba1\Task_6\Task_6\obj\Debug\net8.0\refint\Task_6.dl
 C:\Users\ADMIN\Desktop\OOP\Laba1\Task_6\Task_6\obj\Debug\net8.0\Task_6.pdb
 C:\Users\ADMIN\Desktop\OOP\Laba1\Task_6\Task_6\obj\Debug\net8.0\Task_6.genruntimeconfig.cache
 C:\Users\ADMIN\Desktop\OOP\Laba1\Task_6\Task_6\obj\Debug\net8.0\ref\Task_6.dll
+C:\Users\ADMIN\Desktop\OOP\Laba1\Task_6\Task_6\obj\Debug\net8.0\Task_6.sourcelink.json

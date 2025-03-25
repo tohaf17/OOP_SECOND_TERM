@@ -23,10 +23,9 @@ C:\Users\ADMIN\Desktop\OOP\Laba1\Laba1\obj\Debug\net8.0-windows\First.baml
 C:\Users\ADMIN\Desktop\OOP\Laba1\Laba1\obj\Debug\net8.0-windows\Fifth.g.cs
 C:\Users\ADMIN\Desktop\OOP\Laba1\Laba1\obj\Debug\net8.0-windows\Fourth.g.cs
 C:\Users\ADMIN\Desktop\OOP\Laba1\Laba1\obj\Debug\net8.0-windows\Second.g.cs
-C:\Users\ADMIN\Desktop\OOP\Laba1\Laba1\obj\Debug\net8.0-windows\Sixth.g.cs
 C:\Users\ADMIN\Desktop\OOP\Laba1\Laba1\obj\Debug\net8.0-windows\Third.g.cs
 C:\Users\ADMIN\Desktop\OOP\Laba1\Laba1\obj\Debug\net8.0-windows\Fifth.baml
 C:\Users\ADMIN\Desktop\OOP\Laba1\Laba1\obj\Debug\net8.0-windows\Fourth.baml
 C:\Users\ADMIN\Desktop\OOP\Laba1\Laba1\obj\Debug\net8.0-windows\Second.baml
-C:\Users\ADMIN\Desktop\OOP\Laba1\Laba1\obj\Debug\net8.0-windows\Sixth.baml
 C:\Users\ADMIN\Desktop\OOP\Laba1\Laba1\obj\Debug\net8.0-windows\Third.baml
+C:\Users\ADMIN\Desktop\OOP\Laba1\Laba1\obj\Debug\net8.0-windows\Laba1.sourcelink.json

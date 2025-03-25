@@ -209,7 +209,7 @@ namespace SortingVerificationSystem
             for (int i = 0; i < arr.Length - 1; i++)
             {
                 int minIndex = i;
-                for (int j = i + 1; j < arr.Length; j++)
+                for (int j = i; j < arr.Length; j++)
                 {
                     if (arr[j] < arr[minIndex])
                         minIndex = j;
@@ -229,7 +229,7 @@ namespace SortingVerificationSystem
             {
                 swapped = false;
 
-                for (int i = start; i < end - 1; ++i)
+                for (int i = start; i < end; ++i)
                 {
                     if (array[i] > array[i + 1])
                     {

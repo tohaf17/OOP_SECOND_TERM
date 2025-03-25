@@ -1,0 +1,30 @@
+﻿@startuml
+
+interface ICommand {
+    +Execute()
+    +Undo()
+}
+
+class Calculator {
+    +input_number()
+}
+
+class Manager {
+    +Execute()
+    +Undo()
+}
+
+abstract class Calculator_Commands implements ICommand {
+    +Execute()
+    +Undo()
+}
+
+class Input_Command extends Calculator_Commands {
+    +Execute()
+    +Undo()
+}
+
+Calculator_Commands --|> ICommand
+Input_Command --|> Calculator_Commands
+
+@enduml

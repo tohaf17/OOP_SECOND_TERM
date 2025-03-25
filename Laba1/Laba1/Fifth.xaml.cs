@@ -18,8 +18,8 @@ public partial class Fifth : Window
 
     private void back_click(object sender, RoutedEventArgs e)
     {
-        Button but=sender as Button;
-        if ( but.Background== Brushes.LightGray)
+        Button but = sender as Button;
+        if (but.Background.Equals(Brushes.LightGray))
             but.Background = Brushes.Yellow;
         else
             but.Background = Brushes.LightGray;
@@ -32,60 +32,31 @@ public partial class Fifth : Window
 
     private void super_click(object sender, RoutedEventArgs e)
     {
-        
+        // Оновлюємо обробники перед дією
+
+
+        // Виводимо повідомлення після зміни
         MessageBox.Show("I am super! :)");
+    }
+    private void checkbox_changed(object sender, RoutedEventArgs e)
+    {
         if (first.IsChecked == true)
-        {
-            first_checked(first, new RoutedEventArgs());
-        }
+            super.Click += trans_click;
         else
-        {
-            first_unchecked(first, new RoutedEventArgs());
-        }
+            super.Click -= trans_click;
 
         if (second.IsChecked == true)
-        {
-            second_checked(second, new RoutedEventArgs());
-        }
+            super.Click += back_click;
         else
-        {
-            second_unchecked(second, new RoutedEventArgs());
-        }
+            super.Click -= back_click;
 
         if (third.IsChecked == true)
-        {
-            third_checked(third, new RoutedEventArgs());
-        }
+            super.Click += hello_click;
         else
-        {
-            third_unchecked(third, new RoutedEventArgs());
-        }
-        
-    }
-    private void first_checked(object sender, RoutedEventArgs e)
-    {
-        super.Click += trans_click;
+            super.Click -= hello_click;
     }
 
-    private void first_unchecked(object sender, RoutedEventArgs e)
-    {
-        super.Click -= trans_click;
-    }
-    private void second_checked(object sender, RoutedEventArgs e)
-    {
-        super.Click += back_click;
-    }
-    private void second_unchecked(object sender, RoutedEventArgs e)
-    {
-        super.Click -= back_click;
-    }
-    private void third_checked(object sender, RoutedEventArgs e)
-    {
-        super.Click += hello_click;
-    }
-    private void third_unchecked(object sender, RoutedEventArgs e)
-    {
-        super.Click -= hello_click;
-    }
-    
 }
+
+    
+   
