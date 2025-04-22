@@ -38,19 +38,19 @@ public partial class Concert_Form : Window
     }
 
     
-    private void performance_mouse(object sender, MouseEventArgs e)
-    {
-        if (sender is ListBoxItem item && item.DataContext is Performance the_performance)
-        {
-            ToolTip tooltip = new ToolTip
-            {
-                Content = $"Performance:\nTitle: {the_performance.Title}" +
-                          $"\nPerformer: {the_performance.The_Performer.Name} {the_performance.The_Performer.Surname}" +
-                          $"\nWork: {the_performance.The_Work}" +
-                          $"\nDuration: {the_performance.Duration}"
-            };
-            item.ToolTip = tooltip;
-        }
-    }
+    // private void performance_mouse(object sender, MouseEventArgs e)
+    // {
+    //     if (sender is ListBoxItem item && item.DataContext is Performance the_performance)
+    //     {
+    //         ToolTip tooltip = new ToolTip
+    //         {
+    //             Content = $"Performance:\nTitle: {the_performance.Title}" +
+    //                       $"\nPerformer: {the_performance.The_Performer.Name} {the_performance.The_Performer.Surname}" +
+    //                       $"\nWork: {the_performance.The_Work}" +
+    //                       $"\nDuration: {the_performance.Duration}"
+    //         };
+    //         item.ToolTip = tooltip;
+    //     }
+    // }
 
 }

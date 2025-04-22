@@ -52,9 +52,7 @@ public class Concert_ViewModel : INotifyPropertyChanged
             }
         );
     }
-
-
-   
+    
 
     public string Organizer
     {

@@ -15,17 +15,22 @@
                         <TextBlock Text="Date:" FontWeight="Bold"/>
                         <DatePicker SelectedDate="{Binding Date, UpdateSourceTrigger=PropertyChanged}" Margin="0,0,0,10"/>
                         <TextBlock Text="Performances:" FontWeight="Bold"></TextBlock>
-                        <ListBox 
-                                Name="list_performances"
-                                ItemsSource="{Binding Performances}" 
-                                DisplayMemberPath="Title"
-                                Width="200" Height="200">
-                                <ListBox.ItemContainerStyle>
-                                        <Style TargetType="ListBoxItem">
-                                                <EventSetter Event="MouseEnter" Handler="performance_mouse"></EventSetter>
-                                        </Style>
-                                </ListBox.ItemContainerStyle>
-                        </ListBox>
+                        <DataGrid ItemsSource="{Binding Performances}"
+                                  AutoGenerateColumns="False"
+                                  IsReadOnly="True"
+                                  Width="Auto"
+                                  Height="200"
+                                  Margin="0,0,0,10">
+                                <DataGrid.Columns>
+                                        <DataGridTextColumn Header="Title" Binding="{Binding Title}" />
+                                        <DataGridTextColumn Header="Performer" Binding="{Binding PerformerFullName}" />
+                                        <DataGridTextColumn Header="Work Type" Binding="{Binding The_Work}" />
+                                        <DataGridTextColumn Header="Duration" Binding="{Binding Duration}" />
+                                </DataGrid.Columns>
+
+                               
+                        </DataGrid>
+
 
                         <Button Content="Add performance" Width="100" HorizontalAlignment="Left" Margin="5" Command="{Binding AddPerformanceCommand}"></Button>
                         <Button Content="OK" Width="100" HorizontalAlignment="Left" Margin="5" Command="{Binding OkCommand}"/>
