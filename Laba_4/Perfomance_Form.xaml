@@ -6,26 +6,38 @@
         xmlns:local="clr-namespace:Laba_4"
         mc:Ignorable="d"
         Title="Perfomance" Height="450" Width="400">
+        <Window.Resources>
+                <Style TargetType="TextBox">
+                        <Style.Triggers>
+                                <Trigger Property="Validation.HasError" Value="True">
+                                        <Setter Property="ToolTip"
+                                                Value="{Binding RelativeSource={RelativeSource Self}, 
+                                        Path=(Validation.Errors)[0].ErrorContent}" />
+                                </Trigger>
+                        </Style.Triggers>
+                </Style>
+        </Window.Resources>
+
         <Grid Margin="10">
                 <StackPanel Orientation="Vertical" VerticalAlignment="Top">
 
-                        <TextBlock Text="Type of the work:" FontWeight="Bold" Margin="0,0,0,5"/>
+                        <TextBlock Text="Type of the work:" FontWeight="Bold" Margin="0,0,0,5"/> 
 
                         <ComboBox ItemsSource="{Binding WorkTypes}" 
                                   SelectedItem="{Binding The_Work}" 
                                   Margin="0,0,0,10"/>
 
                         <TextBlock Text="Performer full name:" FontWeight="Bold"/>
-                        <TextBox Text="{Binding PerformerFullName, UpdateSourceTrigger=PropertyChanged}" Margin="0,0,0,10"/>
+                        <TextBox Text="{Binding PerformerFullName, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True}" Margin="0,0,0,10"/>
 
                         
                         <TextBlock Text="Duration of performance" FontWeight="Bold"></TextBlock>
-                        <TextBox Margin="5" Text="{Binding Duration, UpdateSourceTrigger=PropertyChanged}"></TextBox>
+                        <TextBox Margin="5" Text="{Binding Duration, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True}"></TextBox>
                         
                         <TextBlock Text="Title" FontWeight="Bold"></TextBlock>
-                        <TextBox Margin="5" Text="{Binding Title, UpdateSourceTrigger=PropertyChanged}"></TextBox>
+                        <TextBox Margin="5" Text="{Binding Title, UpdateSourceTrigger=PropertyChanged,ValidatesOnDataErrors=True}"></TextBox>
 
-                        <Button Content="OK" Width="100" HorizontalAlignment="Left" Click="ok_click"/>
+                        <Button Content="OK" Width="100" HorizontalAlignment="Left" Command="{Binding OkCommand}"/>
 
                 </StackPanel>
         </Grid>

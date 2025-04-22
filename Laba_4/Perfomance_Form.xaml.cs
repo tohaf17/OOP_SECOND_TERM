@@ -9,13 +9,14 @@ public partial class Perfomance_Form : Window
     public Perfomance_Form()
     {
         InitializeComponent();
+        
         vm = new PerformanceViewModel();
+        vm.OnSuccess = (perf) =>
+        {
+            Result = perf;
+            DialogResult = true;
+            Close();
+        };
         DataContext = vm;
-    }
-    private void ok_click(object sender, RoutedEventArgs e)
-    {
-        Result = vm.BuildPerformance();
-        DialogResult = true; 
-        Close();
     }
 }

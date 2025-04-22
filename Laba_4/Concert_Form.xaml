@@ -14,9 +14,21 @@
 
                         <TextBlock Text="Date:" FontWeight="Bold"/>
                         <DatePicker SelectedDate="{Binding Date, UpdateSourceTrigger=PropertyChanged}" Margin="0,0,0,10"/>
+                        <TextBlock Text="Performances:" FontWeight="Bold"></TextBlock>
+                        <ListBox 
+                                Name="list_performances"
+                                ItemsSource="{Binding Performances}" 
+                                DisplayMemberPath="Title"
+                                Width="200" Height="200">
+                                <ListBox.ItemContainerStyle>
+                                        <Style TargetType="ListBoxItem">
+                                                <EventSetter Event="MouseEnter" Handler="performance_mouse"></EventSetter>
+                                        </Style>
+                                </ListBox.ItemContainerStyle>
+                        </ListBox>
 
-                        <Button Content="Add performance" Width="100" HorizontalAlignment="Left" Margin="5" Click="add_performance"></Button>
-                        <Button Content="OK" Width="100" HorizontalAlignment="Left" Margin="5" Click="ok_click"/>
+                        <Button Content="Add performance" Width="100" HorizontalAlignment="Left" Margin="5" Command="{Binding AddPerformanceCommand}"></Button>
+                        <Button Content="OK" Width="100" HorizontalAlignment="Left" Margin="5" Command="{Binding OkCommand}"/>
 
                 </StackPanel>
         </Grid>

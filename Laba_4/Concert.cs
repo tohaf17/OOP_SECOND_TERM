@@ -38,25 +38,32 @@ public class Concert:INotifyPropertyChanged
         this.organizer = organizer;
         this.date = date;
     }
-    public void Change_List_Perfomances()
-    {
-        
-    }
 
-    public override string ToString() => $"🎵 {Organizer} — {Date.ToShortDateString()}";
+    public override string ToString() => $"{Organizer} — {Date.ToShortDateString()}";
 
-    public string ToShortString()
-    {
-        return $"";
-    }
-    
-    
     public event PropertyChangedEventHandler PropertyChanged;
 
     protected void OnPropertyChanged([CallerMemberName] string name = null)
     {
         PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(name));
     }
+
+    public ConcertDTO ToDTO() => new ConcertDTO()
+    {
+        Organizer = organizer,
+        Date = date,
+        Performances = Performances.Select(p => p.ToDTO()).ToList()
+    };
+    public static Concert FromDTO(ConcertDTO dto)
+    {
+        var concert = new Concert(dto.Organizer, dto.Date);
+        foreach (var perfDTO in dto.Performances)
+        {
+            concert.Performances.Add(Performance.FromDTO(perfDTO));
+        }
+        return concert;
+    }
+
 }
 
 public class Performance:INotifyPropertyChanged
@@ -73,7 +80,16 @@ public class Performance:INotifyPropertyChanged
         }
     }
     private Performer the_performer;
-    public Performer The_Performer;
+
+    public Performer The_Performer
+    {
+        get => the_performer;
+        set
+        {
+            the_performer = value;
+            OnPropertyChanged();
+        }
+    }
 
     public string PerformerFullName
     {
@@ -128,6 +144,21 @@ public class Performance:INotifyPropertyChanged
     {
         PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(name));
     }
+
+    public PerformanceDTO ToDTO() => new PerformanceDTO
+    {
+        Work = this.the_work,
+        Performer = this.the_performer.ToDTO(),
+        Duration = this.duration,
+        Title = this.title
+    };
+
+    public static Performance FromDTO(PerformanceDTO dto)
+    {
+        var performer = Performer.FromDTO(dto.Performer);
+        return new Performance(dto.Work, performer, dto.Duration, dto.Title);
+    }
+
 }
 
 public class Performer:INotifyPropertyChanged
@@ -166,6 +197,17 @@ public class Performer:INotifyPropertyChanged
     {
         PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(name));
     }
+
+    public PerformerDTO ToDTO() => new PerformerDTO
+    {
+        Name = this.name,
+        Surname = this.surname
+    };
+    public static Performer FromDTO(PerformerDTO dto)
+    {
+        return new Performer(dto.Name, dto.Surname);
+    }
+
 }
 
 public enum Work
