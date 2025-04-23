@@ -2,6 +2,7 @@
 using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
+
 using System.Windows;
 
 namespace Laba_4;
@@ -11,9 +12,11 @@ public class Concert_ViewModel : INotifyPropertyChanged
     private Concert concert;
     public RelayCommand OkCommand { get; set; }
     public RelayCommand AddPerformanceCommand { get; set; }
+    public RelayCommand EditPerformanceCommand { get; set; }
     public Action<Concert> OnSuccess { get; set; }
     public Action<Performance> OnAddPerformance { get; set; }
 
+    public Action<Performance>  OnEditPerformance { get; set; }
     
     public Concert_ViewModel()
     {
@@ -28,6 +31,12 @@ public class Concert_ViewModel : INotifyPropertyChanged
             execute: _ =>
             {
                 OnAddPerformance?.Invoke(null);
+            }
+        );
+        EditPerformanceCommand = new RelayCommand(
+            execute: _ =>
+            {
+                OnEditPerformance?.Invoke(null);
             }
         );
 
@@ -49,6 +58,12 @@ public class Concert_ViewModel : INotifyPropertyChanged
             execute: _ =>
             {
                 OnAddPerformance?.Invoke(null); // просто кажемо View: "відкрий форму!"
+            }
+        );
+        EditPerformanceCommand = new RelayCommand(
+            execute: _ =>
+            {
+                OnEditPerformance?.Invoke(null);
             }
         );
     }

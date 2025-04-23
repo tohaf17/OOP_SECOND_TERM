@@ -1,6 +1,7 @@
 ﻿using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Input;
+using System.Windows.Data;
 
 namespace Laba_4;
 
@@ -33,24 +34,38 @@ public partial class Concert_Form : Window
                 MessageBox.Show("Performance додано: " + new_performance.Title);
             }
         };
+        vm.OnEditPerformance = _ =>
+        {
+            if (performancesGrid.SelectedItem is not Performance selected_performance)
+            {
+                MessageBox.Show("Please select a concert");
+                return;
+            }
+
+            var window = new Perfomance_Form(selected_performance);
+
+
+            bool? result = window.ShowDialog();
+
+            if (result == true)
+            {
+                Performance updatedConcert = window.Result;
+
+                selected_performance.The_Work = updatedConcert.The_Work;
+                selected_performance.The_Performer = updatedConcert.The_Performer;
+                selected_performance.Title = updatedConcert.Title;
+                selected_performance.Duration = updatedConcert.Duration;
+                
+
+                //CollectionViewSource.GetDefaultView(Performances).Refresh();
+            }
+
+        };
 
         DataContext = vm;
     }
 
     
-    // private void performance_mouse(object sender, MouseEventArgs e)
-    // {
-    //     if (sender is ListBoxItem item && item.DataContext is Performance the_performance)
-    //     {
-    //         ToolTip tooltip = new ToolTip
-    //         {
-    //             Content = $"Performance:\nTitle: {the_performance.Title}" +
-    //                       $"\nPerformer: {the_performance.The_Performer.Name} {the_performance.The_Performer.Surname}" +
-    //                       $"\nWork: {the_performance.The_Work}" +
-    //                       $"\nDuration: {the_performance.Duration}"
-    //         };
-    //         item.ToolTip = tooltip;
-    //     }
-    // }
+    
 
 }

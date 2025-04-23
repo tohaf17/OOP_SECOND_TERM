@@ -6,6 +6,7 @@ using System;
 namespace Laba_4;
 public class PerformanceViewModel : INotifyPropertyChanged,IDataErrorInfo
 {
+    private Performance performance;
     public IEnumerable<Work> WorkTypes => Enum.GetValues(typeof(Work)).Cast<Work>();
 
     public Work The_Work { get; set; }
@@ -35,6 +36,31 @@ public class PerformanceViewModel : INotifyPropertyChanged,IDataErrorInfo
             }
         );
     }
+
+    public PerformanceViewModel(Performance perf)
+    {
+        performance = new Performance(perf.The_Work, perf.The_Performer, perf.Duration, perf.Title);
+        
+        The_Work = perf.The_Work;
+        PerformerFullName = perf.PerformerFullName; 
+        Duration = perf.Duration;
+        Title = perf.Title;
+
+        OkCommand = new RelayCommand(
+            execute: _ =>
+            {
+                if (!IsValid())
+                {
+                    MessageBox.Show("Please fix all input errors before continuing.",
+                        "Validation Error", MessageBoxButton.OK, MessageBoxImage.Warning);
+                    return;
+                }
+
+                OnSuccess?.Invoke(BuildPerformance());
+            }
+        );
+    }
+
 
     public string this[string name_field]
     {
