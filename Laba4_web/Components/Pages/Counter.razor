@@ -1,0 +1,61 @@
+﻿@using Laba4_Core.ViewModel
+@using Syncfusion.Blazor.Grids
+@using Syncfusion.Blazor.Buttons
+@using Laba4_Core.Class
+@using Microsoft.AspNetCore.Components
+
+<div class="form-group">
+    <label>Organizer:</label>
+    <InputText @bind-Value="ViewModel.Organizer" class="form-control" />
+</div>
+<div class="form-group">
+    <label>Date:</label>
+    <InputDate @bind-Value="ViewModel.Date" class="form-control" />
+</div>
+
+<h5>Performances</h5>
+<SfGrid DataSource="@ViewModel.Performances" TValue="Performance"
+        RowSelected="OnSelected"
+        SelectionSettings="@selection">
+    <GridColumns>
+        <GridColumn Field="Title" HeaderText="Title" />
+        <GridColumn Field="PerformerFullName" HeaderText="Performer" />
+        <GridColumn Field="The_Work" HeaderText="Type" />
+        <GridColumn Field="Duration" HeaderText="Duration (min)" />
+    </GridColumns>
+</SfGrid>
+
+<SfButton @onclick="AddPerformance">Add Performance</SfButton>
+<SfButton @onclick="EditPerformance" Disabled="@(selected == null)">Edit Performance</SfButton>
+<br />
+<SfButton CssClass="e-success" @onclick="Save">Save Concert</SfButton>
+
+@code {
+    [Parameter] public Concert_ViewModel ViewModel { get; set; }
+    [Parameter] public EventCallback OnClose { get; set; }
+
+    private Performance? selected;
+    private GridSelectionSettings selection = new() { Type = Syncfusion.Blazor.Grids.SelectionType.Single };
+
+    private void OnSelected(RowSelectEventArgs<Performance> args)
+    {
+        selected = args.Data;
+        ViewModel.SelectedPerformance = selected;
+    }
+
+    private void AddPerformance()
+    {
+        ViewModel.AddPerformanceCommand.Execute(null);
+    }
+
+    private void EditPerformance()
+    {
+        ViewModel.EditPerformanceCommand.Execute(null);
+    }
+
+    private void Save()
+    {
+        ViewModel.OkCommand.Execute(null);
+        OnClose.InvokeAsync();
+    }
+}

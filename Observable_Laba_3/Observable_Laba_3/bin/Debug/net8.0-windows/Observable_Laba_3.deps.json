@@ -1,0 +1,23 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v8.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v8.0": {
+      "Observable_Laba_3/1.0.0": {
+        "runtime": {
+          "Observable_Laba_3.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "Observable_Laba_3/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}

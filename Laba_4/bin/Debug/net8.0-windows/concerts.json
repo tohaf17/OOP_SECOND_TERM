@@ -1,0 +1,22 @@
+[
+  {
+    "Organizer": "we34923424",
+    "Date": "2025-04-06T00:00:00",
+    "Performances": [
+      {
+        "Work": 0,
+        "Performer": {
+          "Name": "34",
+          "Surname": "4"
+        },
+        "Duration": 3,
+        "Title": "sdf"
+      }
+    ]
+  },
+  {
+    "Organizer": "Default",
+    "Date": "2025-05-05T00:00:00+03:00",
+    "Performances": []
+  }
+]

@@ -17,6 +17,7 @@
                         <TextBlock Text="Performances:" FontWeight="Bold"></TextBlock>
                         <DataGrid Name="performancesGrid"
                                 ItemsSource="{Binding Performances}"
+                                  SelectedItem="{Binding SelectedPerformance, Mode=TwoWay}"
                                   AutoGenerateColumns="False"
                                   IsReadOnly="True"
                                   Width="Auto"

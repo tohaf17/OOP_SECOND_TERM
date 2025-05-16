@@ -1,0 +1,20 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Blazored.Toast" Version="4.2.1" />
+    <PackageReference Include="Syncfusion.Blazor" Version="29.1.41" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="Laba4_Core">
+      <HintPath>..\..\..\..\source\repos\Laba4_Core\obj\Debug\net8.0\Laba4_Core.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
+</Project>

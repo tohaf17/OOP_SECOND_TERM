@@ -1,0 +1,48 @@
+﻿@using Laba4_Core.ViewModel
+@using Laba4_Core.Class
+@using Microsoft.AspNetCore.Components
+
+@inherits ComponentBase
+
+@code {
+    [Parameter] public PerformanceViewModel ViewModel { get; set; }
+    [Parameter] public EventCallback OnClose { get; set; }
+}
+
+<div class="form-group">
+    <label>Title:</label>
+    <InputText @bind-Value="ViewModel.Title" class="form-control" />
+</div>
+<div class="form-group">
+    <label>Performer Full Name:</label>
+    <InputText @bind-Value="ViewModel.PerformerFullName" class="form-control" />
+</div>
+<div class="form-group">
+    <label>Type of Work:</label>
+    <InputSelect @bind-Value="ViewModel.The_Work">
+        @foreach (var work in ViewModel.WorkTypes)
+        {
+            <option value="@work">@work</option>
+        }
+    </InputSelect>
+</div>
+<div class="form-group">
+    <label>Duration (min):</label>
+    <InputNumber @bind-Value="ViewModel.Duration" class="form-control" />
+</div>
+
+<SfButton CssClass="e-success" @onclick="Save">Save</SfButton>
+<SfButton CssClass="e-danger" @onclick="Cancel">Cancel</SfButton>
+
+@code {
+    private void Save()
+    {
+        ViewModel.OkCommand.Execute(null);
+        OnClose.InvokeAsync();
+    }
+
+    private void Cancel()
+    {
+        OnClose.InvokeAsync();
+    }
+}

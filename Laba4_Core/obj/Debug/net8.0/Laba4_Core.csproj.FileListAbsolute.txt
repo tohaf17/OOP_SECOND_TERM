@@ -1,0 +1,11 @@
+C:\Users\ADMIN\source\repos\Laba4_Core\bin\Debug\net8.0\Laba4_Core.deps.json
+C:\Users\ADMIN\source\repos\Laba4_Core\bin\Debug\net8.0\Laba4_Core.dll
+C:\Users\ADMIN\source\repos\Laba4_Core\bin\Debug\net8.0\Laba4_Core.pdb
+C:\Users\ADMIN\source\repos\Laba4_Core\obj\Debug\net8.0\Laba4_Core.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\ADMIN\source\repos\Laba4_Core\obj\Debug\net8.0\Laba4_Core.AssemblyInfoInputs.cache
+C:\Users\ADMIN\source\repos\Laba4_Core\obj\Debug\net8.0\Laba4_Core.AssemblyInfo.cs
+C:\Users\ADMIN\source\repos\Laba4_Core\obj\Debug\net8.0\Laba4_Core.csproj.CoreCompileInputs.cache
+C:\Users\ADMIN\source\repos\Laba4_Core\obj\Debug\net8.0\Laba4_Core.dll
+C:\Users\ADMIN\source\repos\Laba4_Core\obj\Debug\net8.0\refint\Laba4_Core.dll
+C:\Users\ADMIN\source\repos\Laba4_Core\obj\Debug\net8.0\Laba4_Core.pdb
+C:\Users\ADMIN\source\repos\Laba4_Core\obj\Debug\net8.0\ref\Laba4_Core.dll

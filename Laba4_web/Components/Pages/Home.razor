@@ -1,0 +1,284 @@
+﻿@page "/"
+@using Laba4_Web.Services
+@using Laba4_Core.Class
+@using SfGrid=Syncfusion.Blazor.Grids
+@using Syncfusion.Blazor
+@using Syncfusion.Blazor.Popups
+@using Syncfusion.Blazor.Inputs
+@using Microsoft.AspNetCore.Components.Forms
+@using Syncfusion.Blazor.Buttons
+
+@using Blazored.Toast.Services;
+
+@inject MainViewModel vmMain
+@inject Concert_ViewModel vmConcert
+@inject INavigationService navService
+@inject ConcertState concertState
+
+@rendermode InteractiveServer
+
+<SfGrid DataSource="@vmMain.Concerts" AllowPaging="true" TValue="Concert"
+        >
+    <SfGrid:GridSelectionSettings Type="Syncfusion.Blazor.Grids.SelectionType.Single"></SfGrid:GridSelectionSettings>
+    <SfGrid:GridEvents TValue="Concert" RowSelected="@(row => selectedConcert = row.Data)" />
+    <GridColumns>
+        <GridColumn Field="Organizer" HeaderText="Organizer" Width="150" />
+        <GridColumn Field="Date" HeaderText="Date" Format="d" Type="ColumnType.Date" Width="150" />
+        <GridColumn Field="Performances.Count" HeaderText="Performances" Width="120" />
+    </GridColumns>
+</SfGrid>
+
+<SfButton @onclick="() =>
+    nav.OpenAddConcertForm(
+    concert => {
+    vmMain.Concerts.Add(concert);
+    },
+    msg => ToastService.ShowError(msg))">
+    Add concert
+</SfButton>
+<SfButton @onclick="EditConcert">
+    Edit concert
+</SfButton>
+
+
+<SfDialog @ref="dialogAddConcert"
+          @bind-Visible="isDialogOpenConcert"
+          Header="Add Concert"
+          Width="500px"
+          ShowCloseIcon="true"
+          IsModal="true">
+    <div class="form-group">
+        <label>Organizer:</label>
+        <InputText placeholder="organizer" @bind-Value="dialogConcert.Organizer" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label>Date:</label>
+        <InputDate @bind-Value="dialogConcert.Date" class="form-control" />
+    </div>
+    <SfButton CssClass="e-success" @onclick="SaveConcert">Save</SfButton>
+</SfDialog>
+
+@if(selectedConcert is not null)
+{
+    <p><b>Concert: @selectedConcert.Organizer</b></p>
+    <SfGrid DataSource="@selectedConcert.Performances" AllowPaging="true" TValue="Performance">
+        <GridSelectionSettings Type="Syncfusion.Blazor.Grids.SelectionType.Single"></GridSelectionSettings>
+        <GridEvents TValue="Performance" RowSelected="@(performance=> selectedPerformance = performance.Data)" />
+        <GridColumns>
+            <GridColumn Field="Title" HeaderText="Title" Width="150"></GridColumn>
+            <GridColumn Field="The_Work" HeaderText="Work" Width="150" />
+            <GridColumn Field="PerformerFullName" HeaderText="Performer"  Width="150" />
+            <GridColumn Field="Duration" HeaderText="Duration" Width="120" />
+        </GridColumns>
+    </SfGrid>
+    <SfButton @onclick="() =>
+    nav.OpenAddPerformanceForm(
+    performance => {
+    selectedConcert.Performances.Add(performance);
+    },
+    msg => ToastService.ShowError(msg))">
+        Add performance
+    </SfButton>
+    <SfButton @onclick="EditPerformance">
+        Edit performance
+    </SfButton>
+
+    <SfButton CssClass="e-success" @onclick="SaveAllPerformances">
+        Save all performances
+    </SfButton>
+
+    <SfDialog @ref="dialogAddPerformance"
+              @bind-Visible="isDialogOpenPerformance"
+              Header="Add Performance"
+              Width="500px"
+              ShowCloseIcon="true"
+              IsModal="true">
+        <div class="form-group">
+            <label>Work:</label>
+            <InputSelect @bind-Value="dialogPerformance.The_Work" class="form-control">
+                @foreach (var value in Enum.GetValues(typeof(Work)))
+                {
+                    <option value="@value">@value</option>
+                }
+            </InputSelect>
+        </div>
+        <div class="form-group">
+            <label>Full name:</label>
+            <InputText @bind-Value="dialogPerformance.PerformerFullName" class="form-control" />
+        </div>
+        <div class="form-group">
+            <label>Duration:</label>
+            <InputNumber @bind-Value="dialogPerformance.Duration" class="form-control" />
+            
+        </div>
+        <div class="form-group">
+            <label>Title:</label>
+            <InputText @bind-Value="dialogPerformance.Title" class="form-control" />
+        </div>
+        <SfButton CssClass="e-success" @onclick="SavePerformance">Save</SfButton>
+    </SfDialog>
+}
+@code {
+    private SfDialog? dialogAddConcert;
+    private Concert dialogConcert = new("", DateTime.Today);
+    private SfDialog? dialogAddPerformance;
+    private Performance dialogPerformance = new(Work.Poetic, new("Anton","Filipenko"), 30, "anton");
+
+    private Concert? selectedConcert;
+    private Performance? selectedPerformance;
+    private bool isDialogOpenConcert;
+    private bool isDialogOpenPerformance;
+
+    private bool IsConcertSelected => selectedConcert != null;
+    private bool IsPerformanceSelected => selectedPerformance != null;
+    [Inject] private ConcertState stateConcert { get; set; } = default!;
+    [Inject] private PerformanceState statePerformance { get; set; } = default!;
+    [Inject] private INavigationService nav { get; set; } = default!;
+    [Inject] private MainViewModel vm { get; set; } = default!;
+    [Inject] private IToastService ToastService { get; set; } = default!;
+
+    protected override void OnInitialized()
+    {
+        vmMain.LoadConcertsFromFile();
+        stateConcert.TriggerDialog = () =>
+        {
+
+            dialogConcert = new("", DateTime.Today);
+            isDialogOpenConcert = true;
+            StateHasChanged();
+        };
+        statePerformance.TriggerDialog = () =>
+        {
+            dialogPerformance = new(Work.Poetic, new("",""), 0, "");
+            isDialogOpenPerformance = true;
+            StateHasChanged();
+        };
+
+    }
+
+    private void EditConcert()
+    {
+        if (selectedConcert is null)
+        {
+            ToastService.ShowWarning("Select a concert to edit");
+            return;
+        }
+
+        stateConcert.OnSuccess = updated =>
+        {
+            var index = vmMain.Concerts.IndexOf(selectedConcert);
+            if (index != -1)
+            {
+                vmMain.Concerts[index] = updated;
+                ToastService.ShowSuccess("Concert updated");
+            }
+        };
+
+        stateConcert.OnShowMessage = msg => ToastService.ShowError(msg);
+
+        stateConcert.TriggerDialog = () =>
+        {
+            dialogConcert = new Concert(
+                selectedConcert.Organizer,
+                selectedConcert.Date)
+                {
+                    Performances = new(selectedConcert.Performances)
+                };
+
+            isDialogOpenConcert = true;
+            StateHasChanged();
+        };
+
+        stateConcert.TriggerDialog?.Invoke();
+        StateHasChanged();
+    }
+    private void EditPerformance()
+    {
+        if (selectedPerformance is null)
+        {
+            ToastService.ShowWarning("Select a performance to edit");
+            return;
+        }
+
+        statePerformance.OnSuccess = updated =>
+        {
+            var index = vmConcert.Performances.IndexOf(selectedPerformance);
+            if (index != -1)
+            {
+                vmConcert.Performances[index] = updated;
+                ToastService.ShowSuccess("Concert updated");
+            }
+        };
+
+        statePerformance.OnShowMessage = msg => ToastService.ShowError(msg);
+
+        statePerformance.TriggerDialog = () =>
+        {
+            dialogPerformance = new Performance(
+                selectedPerformance.The_Work,
+                selectedPerformance.The_Performer,
+                selectedPerformance.Duration,
+                selectedPerformance.Title);
+
+            isDialogOpenPerformance = true;
+            StateHasChanged();
+        };
+
+        statePerformance.TriggerDialog?.Invoke();
+        StateHasChanged();
+    }
+
+    private void SaveConcert()
+    {
+        if (string.IsNullOrWhiteSpace(dialogConcert.Organizer))
+        {
+            stateConcert.OnShowMessage?.Invoke("Organizer cannot be empty.");
+            return;
+        }
+
+        stateConcert.OnSuccess?.Invoke(dialogConcert); 
+        isDialogOpenConcert = false;
+        StateHasChanged();
+        vmMain.SaveConcertsToFile();
+    }
+    private void SavePerformance()
+    {
+        if (string.IsNullOrWhiteSpace(dialogPerformance.Title))
+        {
+            statePerformance.OnShowMessage?.Invoke("Title cannot be empty.");
+            return;
+        }
+
+        statePerformance.OnSuccess?.Invoke(dialogPerformance);
+        isDialogOpenPerformance = false;
+        
+        StateHasChanged();
+    }
+
+   
+
+    private void SaveAllPerformances()
+    {
+        if (selectedConcert is null)
+        {
+            ToastService.ShowWarning("No concert selected.");
+            return;
+        }
+
+        // Зберігаємо всі зміни — тобто концерт з оновленими перформансами
+        var index = vmMain.Concerts.IndexOf(selectedConcert);
+        if (index != -1)
+        {
+            vmMain.Concerts[index] = selectedConcert;
+            ToastService.ShowSuccess("All performances saved to concert.");
+        }
+
+        // Закриваємо секцію з перформансами (опціонально)
+        selectedConcert = null;
+        selectedPerformance = null;
+
+        vmMain.SaveConcertsToFile();
+    }
+
+
+}

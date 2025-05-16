@@ -1,0 +1,41 @@
+{
+  "Files": [
+    {
+      "Id": "C:\\Users\\ADMIN\\OneDrive\\Desktop\\OOP\\Laba4_Web\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\Laba4_web.bundle.scp.css",
+      "PackagePath": "staticwebassets\\Laba4_web.bundle.scp.css"
+    },
+    {
+      "Id": "C:\\Users\\ADMIN\\OneDrive\\Desktop\\OOP\\Laba4_Web\\wwwroot\\app.css",
+      "PackagePath": "staticwebassets\\app.css"
+    },
+    {
+      "Id": "C:\\Users\\ADMIN\\OneDrive\\Desktop\\OOP\\Laba4_Web\\wwwroot\\bootstrap\\bootstrap.min.css",
+      "PackagePath": "staticwebassets\\bootstrap\\bootstrap.min.css"
+    },
+    {
+      "Id": "C:\\Users\\ADMIN\\OneDrive\\Desktop\\OOP\\Laba4_Web\\wwwroot\\bootstrap\\bootstrap.min.css.map",
+      "PackagePath": "staticwebassets\\bootstrap\\bootstrap.min.css.map"
+    },
+    {
+      "Id": "C:\\Users\\ADMIN\\OneDrive\\Desktop\\OOP\\Laba4_Web\\wwwroot\\favicon.png",
+      "PackagePath": "staticwebassets\\favicon.png"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.Laba4_web.Microsoft.AspNetCore.StaticWebAssets.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.build.Laba4_web.props",
+      "PackagePath": "build\\Laba4_web.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.buildMultiTargeting.Laba4_web.props",
+      "PackagePath": "buildMultiTargeting\\Laba4_web.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.buildTransitive.Laba4_web.props",
+      "PackagePath": "buildTransitive\\Laba4_web.props"
+    }
+  ],
+  "ElementsToRemove": []
+}

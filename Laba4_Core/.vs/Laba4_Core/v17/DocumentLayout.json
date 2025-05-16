@@ -1,0 +1,217 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\ADMIN\\source\\repos\\Laba4_Core\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{38B47446-C3C6-4810-8959-FD442ECE5BC4}|Laba4_Core.csproj|c:\\users\\admin\\source\\repos\\laba4_core\\viewmodel\\mainviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{38B47446-C3C6-4810-8959-FD442ECE5BC4}|Laba4_Core.csproj|solutionrelative:viewmodel\\mainviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{38B47446-C3C6-4810-8959-FD442ECE5BC4}|Laba4_Core.csproj|c:\\users\\admin\\source\\repos\\laba4_core\\viewmodel\\concert_viewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{38B47446-C3C6-4810-8959-FD442ECE5BC4}|Laba4_Core.csproj|solutionrelative:viewmodel\\concert_viewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{38B47446-C3C6-4810-8959-FD442ECE5BC4}|Laba4_Core.csproj|c:\\users\\admin\\source\\repos\\laba4_core\\viewmodel\\performance_viewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{38B47446-C3C6-4810-8959-FD442ECE5BC4}|Laba4_Core.csproj|solutionrelative:viewmodel\\performance_viewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{38B47446-C3C6-4810-8959-FD442ECE5BC4}|Laba4_Core.csproj|c:\\users\\admin\\source\\repos\\laba4_core\\interface\\inavigationservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{38B47446-C3C6-4810-8959-FD442ECE5BC4}|Laba4_Core.csproj|solutionrelative:interface\\inavigationservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{38B47446-C3C6-4810-8959-FD442ECE5BC4}|Laba4_Core.csproj|c:\\users\\admin\\source\\repos\\laba4_core\\interface\\irelaycommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{38B47446-C3C6-4810-8959-FD442ECE5BC4}|Laba4_Core.csproj|solutionrelative:interface\\irelaycommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{38B47446-C3C6-4810-8959-FD442ECE5BC4}|Laba4_Core.csproj|c:\\users\\admin\\source\\repos\\laba4_core\\dto\\performerdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{38B47446-C3C6-4810-8959-FD442ECE5BC4}|Laba4_Core.csproj|solutionrelative:dto\\performerdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{38B47446-C3C6-4810-8959-FD442ECE5BC4}|Laba4_Core.csproj|c:\\users\\admin\\source\\repos\\laba4_core\\dto\\performancedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{38B47446-C3C6-4810-8959-FD442ECE5BC4}|Laba4_Core.csproj|solutionrelative:dto\\performancedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{38B47446-C3C6-4810-8959-FD442ECE5BC4}|Laba4_Core.csproj|c:\\users\\admin\\source\\repos\\laba4_core\\dto\\concertdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{38B47446-C3C6-4810-8959-FD442ECE5BC4}|Laba4_Core.csproj|solutionrelative:dto\\concertdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{38B47446-C3C6-4810-8959-FD442ECE5BC4}|Laba4_Core.csproj|c:\\users\\admin\\source\\repos\\laba4_core\\class\\performer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{38B47446-C3C6-4810-8959-FD442ECE5BC4}|Laba4_Core.csproj|solutionrelative:class\\performer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{38B47446-C3C6-4810-8959-FD442ECE5BC4}|Laba4_Core.csproj|c:\\users\\admin\\source\\repos\\laba4_core\\class\\performance.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{38B47446-C3C6-4810-8959-FD442ECE5BC4}|Laba4_Core.csproj|solutionrelative:class\\performance.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{38B47446-C3C6-4810-8959-FD442ECE5BC4}|Laba4_Core.csproj|c:\\users\\admin\\source\\repos\\laba4_core\\class\\concert.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{38B47446-C3C6-4810-8959-FD442ECE5BC4}|Laba4_Core.csproj|solutionrelative:class\\concert.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\ADMIN\\source\\repos\\Laba4_Core\\bin\\Debug\\net8.0\\Laba4_Core.deps.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:bin\\Debug\\net8.0\\Laba4_Core.deps.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 3,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:128:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "Performer.cs",
+              "DocumentMoniker": "C:\\Users\\ADMIN\\source\\repos\\Laba4_Core\\Class\\Performer.cs",
+              "RelativeDocumentMoniker": "Class\\Performer.cs",
+              "ToolTip": "C:\\Users\\ADMIN\\source\\repos\\Laba4_Core\\Class\\Performer.cs",
+              "RelativeToolTip": "Class\\Performer.cs",
+              "ViewState": "AgIAABsAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-01T10:44:56.232Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "Performance.cs",
+              "DocumentMoniker": "C:\\Users\\ADMIN\\source\\repos\\Laba4_Core\\Class\\Performance.cs",
+              "RelativeDocumentMoniker": "Class\\Performance.cs",
+              "ToolTip": "C:\\Users\\ADMIN\\source\\repos\\Laba4_Core\\Class\\Performance.cs",
+              "RelativeToolTip": "Class\\Performance.cs",
+              "ViewState": "AgIAAFEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-01T10:44:47.883Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "MainViewModel.cs",
+              "DocumentMoniker": "C:\\Users\\ADMIN\\source\\repos\\Laba4_Core\\ViewModel\\MainViewModel.cs",
+              "RelativeDocumentMoniker": "ViewModel\\MainViewModel.cs",
+              "ToolTip": "C:\\Users\\ADMIN\\source\\repos\\Laba4_Core\\ViewModel\\MainViewModel.cs",
+              "RelativeToolTip": "ViewModel\\MainViewModel.cs",
+              "ViewState": "AgIAABYAAAAAAAAAAAAcwEAAAABLAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-29T14:16:32.74Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "ConcertDTO.cs",
+              "DocumentMoniker": "C:\\Users\\ADMIN\\source\\repos\\Laba4_Core\\DTO\\ConcertDTO.cs",
+              "RelativeDocumentMoniker": "DTO\\ConcertDTO.cs",
+              "ToolTip": "C:\\Users\\ADMIN\\source\\repos\\Laba4_Core\\DTO\\ConcertDTO.cs",
+              "RelativeToolTip": "DTO\\ConcertDTO.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-01T10:45:03.912Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "PerformanceDTO.cs",
+              "DocumentMoniker": "C:\\Users\\ADMIN\\source\\repos\\Laba4_Core\\DTO\\PerformanceDTO.cs",
+              "RelativeDocumentMoniker": "DTO\\PerformanceDTO.cs",
+              "ToolTip": "C:\\Users\\ADMIN\\source\\repos\\Laba4_Core\\DTO\\PerformanceDTO.cs",
+              "RelativeToolTip": "DTO\\PerformanceDTO.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-01T10:45:07.206Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "Concert.cs",
+              "DocumentMoniker": "C:\\Users\\ADMIN\\source\\repos\\Laba4_Core\\Class\\Concert.cs",
+              "RelativeDocumentMoniker": "Class\\Concert.cs",
+              "ToolTip": "C:\\Users\\ADMIN\\source\\repos\\Laba4_Core\\Class\\Concert.cs",
+              "RelativeToolTip": "Class\\Concert.cs",
+              "ViewState": "AgIAACcAAAAAAAAAAAAAAE0AAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-01T10:44:25.793Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Performance_ViewModel.cs",
+              "DocumentMoniker": "C:\\Users\\ADMIN\\source\\repos\\Laba4_Core\\ViewModel\\Performance_ViewModel.cs",
+              "RelativeDocumentMoniker": "ViewModel\\Performance_ViewModel.cs",
+              "ToolTip": "C:\\Users\\ADMIN\\source\\repos\\Laba4_Core\\ViewModel\\Performance_ViewModel.cs",
+              "RelativeToolTip": "ViewModel\\Performance_ViewModel.cs",
+              "ViewState": "AgIAAGMAAAAAAAAAAAAAAGwAAABRAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-29T14:16:51.068Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Concert_ViewModel.cs",
+              "DocumentMoniker": "C:\\Users\\ADMIN\\source\\repos\\Laba4_Core\\ViewModel\\Concert_ViewModel.cs",
+              "RelativeDocumentMoniker": "ViewModel\\Concert_ViewModel.cs",
+              "ToolTip": "C:\\Users\\ADMIN\\source\\repos\\Laba4_Core\\ViewModel\\Concert_ViewModel.cs",
+              "RelativeToolTip": "ViewModel\\Concert_ViewModel.cs",
+              "ViewState": "AgIAAF4AAAAAAAAAAAAcwIEAAAACAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-29T18:10:17.893Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "PerformerDTO.cs",
+              "DocumentMoniker": "C:\\Users\\ADMIN\\source\\repos\\Laba4_Core\\DTO\\PerformerDTO.cs",
+              "RelativeDocumentMoniker": "DTO\\PerformerDTO.cs",
+              "ToolTip": "C:\\Users\\ADMIN\\source\\repos\\Laba4_Core\\DTO\\PerformerDTO.cs",
+              "RelativeToolTip": "DTO\\PerformerDTO.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-01T10:45:18.175Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "Laba4_Core.deps.json",
+              "DocumentMoniker": "C:\\Users\\ADMIN\\source\\repos\\Laba4_Core\\bin\\Debug\\net8.0\\Laba4_Core.deps.json",
+              "RelativeDocumentMoniker": "bin\\Debug\\net8.0\\Laba4_Core.deps.json",
+              "ToolTip": "C:\\Users\\ADMIN\\source\\repos\\Laba4_Core\\bin\\Debug\\net8.0\\Laba4_Core.deps.json",
+              "RelativeToolTip": "bin\\Debug\\net8.0\\Laba4_Core.deps.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-04-29T18:06:20.403Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "IRelayCommand.cs",
+              "DocumentMoniker": "C:\\Users\\ADMIN\\source\\repos\\Laba4_Core\\Interface\\IRelayCommand.cs",
+              "RelativeDocumentMoniker": "Interface\\IRelayCommand.cs",
+              "ToolTip": "C:\\Users\\ADMIN\\source\\repos\\Laba4_Core\\Interface\\IRelayCommand.cs",
+              "RelativeToolTip": "Interface\\IRelayCommand.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAvAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-29T17:14:12.004Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "INavigationService.cs",
+              "DocumentMoniker": "C:\\Users\\ADMIN\\source\\repos\\Laba4_Core\\Interface\\INavigationService.cs",
+              "RelativeDocumentMoniker": "Interface\\INavigationService.cs",
+              "ToolTip": "C:\\Users\\ADMIN\\source\\repos\\Laba4_Core\\Interface\\INavigationService.cs",
+              "RelativeToolTip": "Interface\\INavigationService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABQAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-29T16:43:54.683Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

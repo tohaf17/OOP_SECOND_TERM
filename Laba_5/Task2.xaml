@@ -1,0 +1,70 @@
+﻿<Window x:Class="Laba_5.Task2"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Laba_5"
+        mc:Ignorable="d"
+        Title="Task2" Height="450" Width="800">
+    <Window.Resources>
+        <local:BoolToBrushConverter x:Key="BoolToBrushConverter"/>
+    </Window.Resources>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="7*"/>
+        </Grid.RowDefinitions>
+        <Grid Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="69*"/>
+                <ColumnDefinition Width="31*"/>
+            </Grid.ColumnDefinitions>
+            <!-- 1. Фон діаграми -->
+            <Image x:Name="VoronoiImage" Stretch="Fill" Panel.ZIndex="0" Grid.ColumnSpan="2"/>
+
+            <!-- 2. Точки -->
+            <ItemsControl MouseLeftButtonDown="MouseClick"
+                  ItemsSource="{Binding Points}" Name="myCanvas"
+                  Panel.ZIndex="1" Grid.ColumnSpan="2">
+                <ItemsControl.ItemsPanel>
+                    <ItemsPanelTemplate>
+                        <Canvas Background="Transparent"/>
+                    </ItemsPanelTemplate>
+                </ItemsControl.ItemsPanel>
+                <ItemsControl.ItemContainerStyle>
+                    <Style>
+                        <Setter Property="Canvas.Left" Value="{Binding X}" />
+                        <Setter Property="Canvas.Top" Value="{Binding Y}" />
+                    </Style>
+                </ItemsControl.ItemContainerStyle>
+                <ItemsControl.ItemTemplate>
+                    <DataTemplate>
+                        <Ellipse Width="6" Height="6"
+                         Stroke="Black"
+                         StrokeThickness="1"
+                         Fill="{Binding isSelected, Converter={StaticResource BoolToBrushConverter}}"
+                         MouseLeftButtonDown="Ellipse_Click"/>
+                    </DataTemplate>
+                </ItemsControl.ItemTemplate>
+            </ItemsControl>
+        </Grid>
+
+        <StackPanel Grid.Row="0" Orientation="Horizontal" HorizontalAlignment="Center">
+            <Button Click="Generate_Points" Content="Generate 50 point" Width="110" Height="30" Margin="10"/>
+            <Button Click="DeletePoints" Content="Delete 50 points" Width="110" Height="30" Margin="10"/>
+            <Button Click="DeleteSmallestAreas" Content="Delete the smallest areas" Width="100" Height="30" Margin="10"/>
+            <Button Click="DrawVoronoi_Click" Content="Diagram creation" Width="100" Height="30" Margin="10"/>
+            <ComboBox Name="comboBox" SelectedIndex="0" Width="100" Height="30" Margin="10">
+                <ComboBoxItem Content="One thread"/>
+                <ComboBoxItem Content="Many thread"/>
+            </ComboBox >
+            <ComboBox Name="comboMetricks" SelectedIndex="0" Width="100" Height="30" Margin="10">
+                <ComboBoxItem Content="Евклід"/>
+                <ComboBoxItem Content="Мангеттен"/>
+                <ComboBoxItem Content="Чебишов"/>
+                <ComboBoxItem Content="щось"/>
+                <ComboBoxItem Content="щось у 4 степені"/>
+            </ComboBox>
+        </StackPanel>
+    </Grid>
+</Window>

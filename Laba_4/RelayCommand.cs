@@ -1,24 +1,23 @@
 ﻿using System;
 using System.Windows.Input;
-
+using Laba4_Core.Interface;
 namespace Laba_4;
-
-public class RelayCommand : ICommand
+public class RelayCommand : ICommand, IRelayCommand
 {
     private readonly Action<object> _execute;
     private readonly Predicate<object> _canExecute;
-
-    public RelayCommand(Action<object> execute, Predicate<object> canExecute = null)
+    public RelayCommand(Action<object> exec, Predicate<object> can = null)
     {
-        _execute = execute ?? throw new ArgumentNullException(nameof(execute));
-        _canExecute = canExecute;
+        _execute = exec;
+        _canExecute = can;
     }
-
-    public bool CanExecute(object parameter) => _canExecute == null || _canExecute(parameter);
-    public void Execute(object parameter) => _execute(parameter);
+    public bool CanExecute(object p) => _canExecute == null || _canExecute(p);
+    public void Execute(object p) => _execute(p);
     public event EventHandler CanExecuteChanged
     {
         add => CommandManager.RequerySuggested += value;
         remove => CommandManager.RequerySuggested -= value;
     }
+    public void RaiseCanExecuteChanged()
+      => CommandManager.InvalidateRequerySuggested();
 }
